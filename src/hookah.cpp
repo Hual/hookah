@@ -20,7 +20,7 @@ namespace hookah
 	hook::hook(FARPROC lpAddress, LPVOID lpCallback, bool bActivate)
 	{
 		/* get the address of the imported subroutine */
-		BYTE* address_bytes = (BYTE*)lpAddress;
+		BYTE* address_bytes = reinterpret_cast<BYTE*>(lpAddress);
 
 		/* declare/initialize variables */
 		HDES hs;
@@ -38,7 +38,7 @@ namespace hookah
 		/* allocate memory on the heap for original function redirection */
 		originalFunction = new BYTE[trampolineSize + JMP_PATCH_SIZE];
 		originalFunctionJumpback = address_bytes + trampolineSize;
-		BYTE* origFuncAddress = (BYTE*)originalFunction;
+		BYTE* origFuncAddress = reinterpret_cast<BYTE*>(originalFunction);
 
 		/* copy instructions that we're going to replace */
 		memcpy(originalFunction, lpAddress, trampolineSize);
