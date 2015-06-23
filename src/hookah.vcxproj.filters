@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="HDE">
+      <UniqueIdentifier>{9150f1cb-7f62-4c70-97dc-7561233f6623}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HDE\hde32.c">
+      <Filter>HDE</Filter>
+    </ClCompile>
+    <ClCompile Include="HDE\hde64.c">
+      <Filter>HDE</Filter>
+    </ClCompile>
+    <ClCompile Include="hookah.cpp" />
+    <ClCompile Include="hookah_util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HDE\hde32.h">
+      <Filter>HDE</Filter>
+    </ClInclude>
+    <ClInclude Include="HDE\hde64.h">
+      <Filter>HDE</Filter>
+    </ClInclude>
+    <ClInclude Include="HDE\pstdint.h">
+      <Filter>HDE</Filter>
+    </ClInclude>
+    <ClInclude Include="hookah_util.h" />
+    <ClInclude Include="..\include\hookah.h" />
+  </ItemGroup>
+</Project>
